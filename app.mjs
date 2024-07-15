@@ -12,7 +12,8 @@ setInterval(()=>{
                 if(value[2]["v"][0]!=prev){
                     prev=value[2]["v"][0];
                     try{
-                    bot.telegram.sendMessage("@fast_gold_price",parseFloat(value[2]["v"][0]).toFixed(2)+" $");
+                                                              // here with regex i did truncate the numbers 
+                    bot.telegram.sendMessage("@fast_gold_price",value[2]["v"][0].toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]+" $");
                     }
                     catch(err){
                         console.log("not found the channel")
