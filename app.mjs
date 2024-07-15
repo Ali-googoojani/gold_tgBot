@@ -12,7 +12,7 @@ setInterval(()=>{
                 if(value[2]["v"][0]!=prev){
                     prev=value[2]["v"][0];
                     try{
-                    bot.telegram.sendMessage("@fast_gold_price",value[2]["v"][0]+" $");
+                    bot.telegram.sendMessage("@fast_gold_price",parseFloat(value[2]["v"][0]).toFixed(2)+" $");
                     }
                     catch(err){
                         console.log("not found the channel")
